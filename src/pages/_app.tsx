@@ -2,6 +2,10 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
 import Head from 'next/head';
 import GlobalStyles from '@styles/global';
+import NextNprogress from 'nextjs-progressbar';
+
+import { DefaultSeo } from 'next-seo';
+import SEO from '../../next-seo.config';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -27,7 +31,16 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
 
+      <DefaultSeo {...SEO} />
+
       <GlobalStyles />
+
+      <NextNprogress
+        color="#f231a5"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={4}
+      />
 
       <Component {...pageProps} />
     </>

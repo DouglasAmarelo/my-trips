@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { useRouter } from 'next/dist/client/router';
 
 type Place = {
   id: string;
@@ -15,6 +16,8 @@ export type MapProps = {
 };
 
 const Map = ({ places }: MapProps) => {
+  const router = useRouter();
+
   return (
     <MapContainer
       center={[0, 0]}
@@ -25,7 +28,7 @@ const Map = ({ places }: MapProps) => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {places?.map(({ id, location, name }) => {
+      {places?.map(({ id, location, name, slug }) => {
         const { latitude, longitude } = location;
 
         return (
@@ -33,6 +36,11 @@ const Map = ({ places }: MapProps) => {
             key={`place-${id}`}
             position={[latitude, longitude]}
             title={name}
+            eventHandlers={{
+              click: () => {
+                router.push(`/place/${slug}`);
+              },
+            }}
           />
         );
       })}

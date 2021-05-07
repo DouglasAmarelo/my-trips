@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "husky": {
     "hooks": {
@@ -23,9 +24,13 @@
   },
   "dependencies": {
     "@styled-icons/evaicons-outline": "^10.18.0",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "leaflet": "^1.7.1",
     "next": "10.0.9",
     "next-pwa": "^5.0.6",
+    "next-seo": "^4.24.0",
+    "nextjs-progressbar": "^0.0.9",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-leaflet": "^3.1.0",
@@ -33,7 +38,12 @@
     "webpack": "4"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.15",
     "@babel/preset-typescript": "^7.13.0",
+    "@graphql-codegen/add": "^2.0.2",
+    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/typescript": "1.21.1",
+    "@graphql-codegen/typescript-operations": "1.17.15",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.21",
@@ -43,6 +53,7 @@
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
