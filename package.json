@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
@@ -30,6 +31,7 @@
     "next": "10.0.9",
     "next-pwa": "^5.0.6",
     "next-seo": "^4.24.0",
+    "next-sitemap": "^1.6.57",
     "nextjs-progressbar": "^0.0.9",
     "react": "17.0.1",
     "react-dom": "17.0.1",

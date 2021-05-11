@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://douglasamarelo-my-trips.vercel.app
+
+# Sitemaps
+Sitemap: https://douglasamarelo-my-trips.vercel.app/sitemap.xml
